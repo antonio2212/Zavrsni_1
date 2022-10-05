@@ -49,7 +49,7 @@ class LoginController extends Controller
             $_SESSION['autoriziran']=$operater;
             //$np = new NadzornaplocaController();
             //$np->index();
-            header('location:' . App::config('url') . 'nadzornaploca');
+            header('location:' . Nogometniklubovi::config('url') . 'nadzornaploca');
 
     }
 

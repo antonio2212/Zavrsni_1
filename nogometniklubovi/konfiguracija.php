@@ -2,5 +2,5 @@
 
 return [
     'url'=>'http://nogometniklubovi.hr/',
-    'nazivApp'=>'Edunova App'
+    'naziv'=>'Nogometni klubovi'
 ];

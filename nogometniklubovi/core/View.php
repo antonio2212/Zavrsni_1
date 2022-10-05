@@ -12,7 +12,7 @@ class View
     public function render($phtmlStranica, $parametri=[])
     {
         //Log::log($parametri);
-        $viewDatoteka = BP_APP . 'view' . 
+        $viewDatoteka = BP_NOGOMETNIKLUBOVI . 'view' . 
         DIRECTORY_SEPARATOR . $phtmlStranica . '.phtml';
         ob_start();
         extract($parametri);
@@ -20,12 +20,12 @@ class View
         if(file_exists($viewDatoteka)){
             include_once $viewDatoteka;
         }else{
-            include_once BP_APP . 'view' . 
+            include_once BP_NOGOMETNIKLUBOVI . 'view' . 
             DIRECTORY_SEPARATOR . 'errorViewDatoteka.phtml';
         }
         $sadrzaj = ob_get_clean();
         
-        include_once BP_APP . 'view' . 
+        include_once BP_NOGOMETNIKLUBOVI . 'view' . 
             DIRECTORY_SEPARATOR . $this->predlozak . '.phtml';
     }
 }

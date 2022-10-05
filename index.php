@@ -7,17 +7,22 @@
 //echo '</pre>';
 //echo $_SERVER['REDIRECT_PATH_INFO'];
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 session_start();
 
 define('BP',__DIR__ . DIRECTORY_SEPARATOR);
-define('BP_APP', BP . 'app' . DIRECTORY_SEPARATOR);
+define('BP_NOGOMETNIKLUBOVI', BP . 'nogometniklubovi' . DIRECTORY_SEPARATOR);
 //echo BP, '<br />';
-//echo BP_APP, '<br />';
+//echo BP_Nogometniklubovi, '<br />';
 
 $zaAutoload = [
-    BP_APP . 'controller',
-    BP_APP . 'model',
-    BP_APP . 'core'
+    BP_NOGOMETNIKLUBOVI . 'controller',
+    BP_NOGOMETNIKLUBOVI . 'model',
+    BP_NOGOMETNIKLUBOVI . 'core'
 ];
 
 $putanje = implode(PATH_SEPARATOR,$zaAutoload);
@@ -40,8 +45,8 @@ spl_autoload_register(function($klasa){
     }
 });
 
-App::start();
+Nogometniklubovi::start();
 
-//require  BP_APP . 'controller/SmjerController.php';
+//require  BP_nogometniklubovi . 'controller/SmjerController.php';
 //$c = new SmjerController(); //ovdje se okida poziv funkcija spl_autoload_register
 //$c->index();
